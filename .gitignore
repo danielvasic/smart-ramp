@@ -6,3 +6,4 @@ video
 migrations
 certs
 certs/*
+.DS_Store
