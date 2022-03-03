@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" entityID="https://aai.sum.ba/sso/saml2/idp/metadata.php">
+  <md:IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+    <md:Extensions>
+      <mdui:UIInfo xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui">
+        <mdui:DisplayName xml:lang="en">SUM Single Sign-On Service</mdui:DisplayName>
+        <mdui:DisplayName xml:lang="hr">SUM sustav jedinstvene autentikacije korisnika</mdui:DisplayName>
+        <mdui:Description xml:lang="en">Central Login Service for SAML enabled services registered within sum.ba .</mdui:Description>
+        <mdui:Description xml:lang="hr">Autentikacijski servis sum.ba za aplikacije koje koriste SAML kao autentikacijski modul.</mdui:Description>
+      </mdui:UIInfo>
+    </md:Extensions>
+    <md:KeyDescriptor use="signing">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>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</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:KeyDescriptor use="encryption">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>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</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://aai.sum.ba/sso/saml2/idp/SingleLogoutService.php"/>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat>
+    <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://aai.sum.ba/sso/saml2/idp/SSOService.php"/>
+  </md:IDPSSODescriptor>
+  <md:Organization>
+    <md:OrganizationName xml:lang="en">SUM</md:OrganizationName>
+    <md:OrganizationName xml:lang="hr">SUM</md:OrganizationName>
+    <md:OrganizationDisplayName xml:lang="en">SUM Authentication service sum.ba</md:OrganizationDisplayName>
+    <md:OrganizationDisplayName xml:lang="hr">SUM Autentikacijski servis sum.ba</md:OrganizationDisplayName>
+    <md:OrganizationURL xml:lang="en">http://www.sum.ba</md:OrganizationURL>
+    <md:OrganizationURL xml:lang="hr">http://www.sum.ba</md:OrganizationURL>
+  </md:Organization>
+  <md:ContactPerson contactType="technical">
+    <md:GivenName>Administrator</md:GivenName>
+    <md:EmailAddress>mailto:aai@sum.ba</md:EmailAddress>
+  </md:ContactPerson>
+</md:EntityDescriptor>

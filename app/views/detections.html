@@ -1,0 +1,38 @@
+{% extends 'layout.html' %} {% block header %}
+<header>
+  <div class="max-w-7xl mx-auto py-4 px-2">
+    <h1 class="text-3xl font-bold text-gray-900 inline-flex">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6  m-2" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+        <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+      </svg>
+      {% block title %}Prikaz ulazaka na sveučilište{% endblock %}
+    </h1>
+  </div>
+</header>
+{% endblock %} 
+{% block content %}
+<table class="min-w-max w-full table-auto border-collapse bg-white shadow-xl">
+  <thead>
+    <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+      <th class="px-4 py-3">Proizvođač vozila</th>
+      <th class="px-4 py-3">Tip vozila</th>
+      <th class="px-4 py-3">Registracijska oznaka</th>
+      <th class="px-4 py-3">Vrijeme događaja</th>
+      <th class="px-4 py-3">Vrsta događaja</th>
+    </tr>
+  </thead>
+
+  <tbody class="text-gray-600 text-sm font-light">
+    {% for detection in detections %}
+    <tr>
+      <td class="px-4 py-3">{{detection.car.car_type.manufacturer.name}}</td>
+      <td class="px-4 py-3">{{detection.car.car_type.name}}</td>
+      <td class="px-4 py-3">{{detection.car.platenumber}}</td>
+      <td class="px-4 py-3">{{detection.detected_at}}</td>
+      <td class="px-4 py-3">{{"Ulazak" if detection.entering else "Izlazak"}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

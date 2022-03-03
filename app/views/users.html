@@ -1,0 +1,33 @@
+{% extends 'layout.html' %} {% block header %}
+<header>
+  <div class="max-w-7xl mx-auto py-4 px-2">
+    <h1 class="text-3xl font-bold text-gray-900 inline-flex">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 m-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+      {% block title %}Administracija korisnika{% endblock %}
+    </h1>
+  </div>
+</header>
+{% endblock %} 
+{% block content %}
+<table class="min-w-max w-full table-auto border-collapse bg-white shadow-xl">
+  <thead>
+    <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+      <th class="px-4 py-3">Ime i prezime</th>
+      <th class="px-4 py-3">E-pošta</th>
+      <th class="px-4 py-3">Uloga</th>
+    </tr>
+  </thead>
+
+  <tbody class="text-gray-600 text-sm font-light">
+    {% for user in users %}
+    <tr>
+      <td class="px-4 py-3">{{user.fullname}}</td>
+      <td class="px-4 py-3">{{user.email}}</td>
+      <td class="px-4 py-3">{{user.role}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
