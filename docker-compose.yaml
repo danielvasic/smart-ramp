@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+  smart-ramp:
+    container_name: smart-ramp
+    build: .
+    image: smart-ramp:latest
+    ports: 
+      - 8484:443
+    networks: 
+      - smart-ramp-network
+    depends_on:
+      - smart-ramp-mysql
+    restart: always
+  smart-ramp-mysql:
+      image: mysql:latest
+      command: --character-set-server=utf8 --collation-server=utf8_general_ci
+      networks:
+        - smart-ramp-network
+      environment:
+        - MYSQL_ROOT_PASSWORD=Csdigital123.
+        - MYSQL_DATABASE=ramp
+      volumes:
+        - mysql-data:/var/lib/mysql
+      restart: always
+volumes:
+  mysql-data:
+networks:
+  smart-ramp-network:
+    driver: bridge
