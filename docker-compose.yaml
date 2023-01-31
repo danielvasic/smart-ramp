@@ -9,11 +9,12 @@ services:
     networks: 
       - smart-ramp-network
     depends_on:
-      - smart-ramp-mysql
+      - mysql
     restart: always
-  smart-ramp-mysql:
-      image: mysql:latest
+  mysql:
+      container_name: mysql
       command: --character-set-server=utf8 --collation-server=utf8_general_ci
+      image: mysql:5.7.41
       networks:
         - smart-ramp-network
       environment:

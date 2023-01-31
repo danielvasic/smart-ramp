@@ -4,7 +4,7 @@ MYSQL_CONFIG = {
     "username": "root",
     "password": "Csdigital123.",
     "database": "ramp",
-    "server": "localhost"
+    "server": "mysql"
 }
 
 MYSQL_CONFIG_URI =  "mysql://{}:{}@{}/{}?charset=utf8mb4".format(
