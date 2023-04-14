@@ -3,8 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 MYSQL_CONFIG = {
     "username": "root",
     "password": "Csdigital123.",
-    "database": "ramp",
-    "server": "mysql"
+    "database": "smart-ramp-system",
+    "server": "212.39.115.111"
 }
 
 MYSQL_CONFIG_URI =  "mysql://{}:{}@{}/{}?charset=utf8mb4".format(
